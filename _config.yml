@@ -55,7 +55,10 @@ social:
   - title: github
     url: https://github.com/tna76874/notebooks-school
 
-githubrepo: https://github.com/tna76874/notebooks-school
+githubrepo_python: https://github.com/tna76874/notebooks-school
+githubrepo_pythonlite: https://github.com/tna76874/pythonlite
+githubrepo_info: https://github.com/tna76874/notebooks-school-info
+
 # Postal address (add as many lines as necessary)
 address:
 
