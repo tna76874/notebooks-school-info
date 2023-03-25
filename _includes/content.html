@@ -1,0 +1,29 @@
+<!-- Portfolio Grid Section -->
+<section id="content">
+  <div class="container portfolio-flex-grid">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>Inhalte</h2>
+        <hr class="star-primary">
+      </div>
+    </div>
+    <div class="portfolio-flex-row">
+      {% for content in site.content %}
+      <div class="contentcontainer">
+        <div class="author">Author:</div>
+        <div class="author-name">{{ content.author }}</div>
+        <div class="klassen">Klassen:</div>
+        <div class="klasse-val">{{ content.klassen }}</div>
+        <div class="download"><a href="{{ content.openurl }}" target="_blank">Öffnen</a></div>
+        <div class="beschreibung">{{ content.content | markdownify }}</div>
+        <div class="inhalt">Inhalt:</div>
+        <div class="inhalt-val">{{ content.inhalt }}</div>
+        <div class="art">Art:</div>
+        <div class="art-val">{{ content.art }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+</section>

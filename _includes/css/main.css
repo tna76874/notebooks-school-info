@@ -484,3 +484,50 @@ footer .footer-below {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
+
+.contentcontainer {  display: grid;
+    grid-template-columns: 21.4% 34.1% 44.5%;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 1em 0em;
+    grid-auto-flow: row dense;
+    justify-items: stretch;
+    grid-template-areas:
+      "art art-val beschreibung"
+      "author author-name beschreibung"
+      "inhalt inhalt-val beschreibung"
+      "klassen klassen-val beschreibung"
+      "download download beschreibung";
+    width: 100%;
+  }
+  
+  .author { grid-area: author; }
+  
+  .author-name { grid-area: author-name; }
+  
+  .klassen-val { grid-area: klassen-val; }
+  
+  .download {
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: download;
+  }
+  
+  .beschreibung { grid-area: beschreibung; }
+  
+  .klassen { grid-area: klassen; }
+  
+  .inhalt { grid-area: inhalt; }
+  
+  .inhalt-val { grid-area: inhalt-val; }
+  
+  .art { grid-area: art; }
+  
+  .art-val { grid-area: art-val; }
+  
+  
+  
+  
+  
+  
+  
+  
