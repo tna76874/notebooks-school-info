@@ -9,20 +9,44 @@
     </div>
     <div class="portfolio-flex-row">
       {% for content in site.content %}
-      <div class="contentcontainer">
-        <div class="author">Author:</div>
-        <div class="author-name">{{ content.author }}</div>
-        <div class="klassen">Klassen:</div>
-        <div class="klasse-val">{{ content.klassen }}</div>
-        <div class="download"><a href="{{ content.openurl }}" target="_blank">Öffnen</a></div>
-        <div class="beschreibung">{{ content.content | markdownify }}</div>
-        <div class="inhalt">Inhalt:</div>
-        <div class="inhalt-val">{{ content.inhalt }}</div>
-        <div class="art">Art:</div>
-        <div class="art-val">{{ content.art }}</div>
+      <button class="collapsible">{{ content.titel }}</button>
+      <div class="collapsiblecontent">
+        <div class="contentcontainer">
+          <div class="author">Author:</div>
+          <div class="author-name">{{ content.author }}</div>
+          <div class="klassen">Klassen:</div>
+          <div class="klasse-val">{{ content.klassen }}</div>
+          <div class="download"><a href="{{ content.openurl }}" target="_blank">Öffnen</a></div>
+          <div class="beschreibung">{{ content.content | markdownify }}</div>
+          <div class="inhalt">Inhalt:</div>
+          <div class="inhalt-val">{{ content.inhalt }}</div>
+          <div class="art">Art:</div>
+          <div class="art-val">{{ content.art }}</div>
+        </div>
       </div>
       {% endfor %}
     </div>
+
+    
+        
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } 
+        });
+      }
+    </script>
+
   </div>
 
 
