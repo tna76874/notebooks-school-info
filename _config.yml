@@ -73,3 +73,6 @@ defaults:
 
 exclude:
   - docker-compose.yml
+
+plugins:
+  - jekyll-seo-tag
