@@ -1,10 +1,11 @@
 # Site settings
 title: Informatikunterricht mit Python
+locale: de_DE
 email: f/xgebkgvl
 url: https://tna76874.github.io/notebooks-school
-description: "moderner Informatikunterricht mit Python-Notebooks"
-keywords: "Informatikunterricht, Python"
-skills: "moderner Informatikunterricht mit Python-Notebooks"
+description: "moderner Unterricht mit Python-Notebooks"
+keywords: "Informatikunterricht, Python, Schule, Jupyter, Notebook"
+skills: "moderner Unterricht mit Python-Notebooks"
 meta_author: LMH
 
 binder_commit: 61147dc15394dab240c603760a786aa817aca8ca
