@@ -1,8 +1,8 @@
 ---
-art: Java/Jupiter Arbeitsumgebung
+art: Java/Jupyter Arbeitsumgebung
 titel: Java Notebookserver
 author: Lukas Meyer-Hilberg
-inhalt: Java/Jupiter Arbeitsumgebung
+inhalt: Java/Jupyter Arbeitsumgebung
 klassen: 
 openurl: https://mybinder.org/v2/gh/tna76874/notebooks-school-java/stable
 ---
