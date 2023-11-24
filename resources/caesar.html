@@ -30,10 +30,10 @@
         }
 
         .background-image {
-            z-index: -1; /* Damit das Hintergrundbild im Hintergrund liegt */
+            z-index: -1;
         }
     </style>
-    <title>Rotierendes Bild</title>
+    <title>Chiffrierscheibe Caesar-Verschlüsselung</title>
 </head>
 <body>
     <div class="container">
@@ -42,21 +42,33 @@
     </div>
     <script>
         const rotatingImage = document.getElementById('rotatingImage');
-
         let angle = 0;
 
-        document.addEventListener('mousemove', (event) => {
+        function handleMove(event) {
             const rect = rotatingImage.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
 
-            const deltaX = event.clientX - centerX;
-            const deltaY = event.clientY - centerY;
+            let clientX, clientY;
+
+            if (event.touches) {
+                clientX = event.touches[0].clientX;
+                clientY = event.touches[0].clientY;
+            } else {
+                clientX = event.clientX;
+                clientY = event.clientY;
+            }
+
+            const deltaX = clientX - centerX;
+            const deltaY = clientY - centerY;
 
             angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
             rotatingImage.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-        });
+        }
+
+        document.addEventListener('mousemove', handleMove);
+        document.addEventListener('touchmove', handleMove);
     </script>
 </body>
 </html>
