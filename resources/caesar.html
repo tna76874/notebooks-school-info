@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-image, .rotating-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .background-image {
+            z-index: -1; /* Damit das Hintergrundbild im Hintergrund liegt */
+        }
+    </style>
+    <title>Rotierendes Bild</title>
+</head>
+<body>
+    <div class="container">
+        <img src="c0.svg" alt="Hintergrundbild" class="background-image">
+        <img src="c1.svg" alt="Rotierendes Bild" class="rotating-image" id="rotatingImage">
+    </div>
+    <script>
+        const rotatingImage = document.getElementById('rotatingImage');
+
+        let angle = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            const rect = rotatingImage.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const deltaX = event.clientX - centerX;
+            const deltaY = event.clientY - centerY;
+
+            angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+            rotatingImage.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+        });
+    </script>
+</body>
+</html>
