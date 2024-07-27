@@ -2,7 +2,7 @@
 art: PDF
 titel: Unterrichtsskript Informatik 7
 author: Lukas Meyer-Hilberg
-inhalt: Codierung, Algorithmen
+inhalt: Codierung, Algorithmen, Verschlüsselung
 klassen: 7 (BW)
 openurl: https://s.hilberg.eu/2024-07-27v2/files/skript.pdf
 ---
