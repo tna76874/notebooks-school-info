@@ -567,3 +567,26 @@ background-color: #f1f1f1;
     background-color: #555555;
     color: white;
   } 
+
+#search-button {
+    background-color: green;   /* Grüner Hintergrund */
+    color: white;              /* Weiße Schriftfarbe */
+    border: none;              /* Entfernt den Standardrahmen */
+    padding: 20px 40px;        /* Größeres Padding für eine größere klickbare Fläche */
+    font-size: 16px;           /* Schriftgröße */
+    cursor: pointer;          /* Zeigt an, dass der Button anklickbar ist */
+    display: inline-block;     /* Verhindert, dass der Button zusätzlichen Raum außerhalb der Fläche hat */
+    box-sizing: border-box;    /* Padding und Border sind Teil der Gesamtgröße */
+    text-align: center;        /* Text wird zentriert */
+    width: auto;               /* Breite wird automatisch angepasst */
+    height: auto;              /* Höhe wird automatisch angepasst */
+    min-width: 180px;          /* Mindestbreite für den Button */
+    min-height: 60px;          /* Mindesthöhe für den Button */
+    position: relative;        /* Stellt sicher, dass die Fläche vollständig berücksichtigt wird */
+    z-index: 1;                /* Sicherstellen, dass der Button im Vordergrund bleibt */
+}
+
+#search-button:disabled {
+    background-color: lightgray;  /* Hintergrundfarbe für den deaktivierten Zustand */
+    cursor: not-allowed;          /* Mauszeiger zeigt an, dass der Button deaktiviert ist */
+}

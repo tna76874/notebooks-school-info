@@ -16,8 +16,10 @@ function toggleForm() {
 $('#contactForm').on('submit', function(event) {
     event.preventDefault();
 
-    // Deaktivieren des Absenden-Buttons
-    $('#submitButton').prop('disabled', true);
+    var searchButton = document.getElementById('search-button');
+    if (searchButton) {
+        searchButton.setAttribute('disabled', 'true');
+    }
   
     $.ajax({
       url: $(this).attr('action'),
@@ -47,8 +49,9 @@ $('#contactForm').on('submit', function(event) {
         $('#success > .alert-danger').append("<strong>Entschuldigung, es scheint, dass mein Mailserver nicht reagiert. Bitte versuchen Sie es später erneut!</strong>");
         $('#success > .alert-danger').append('</div>');
   
-        // Alle Felder zurücksetzen
-        $('#contactForm').trigger("reset");
+        if (searchButton) {
+            searchButton.removeAttribute('disabled');
+        }
       }
     });
   });
