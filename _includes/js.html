@@ -15,6 +15,24 @@
 <script src="{{ " js/contact_me_static.js" }}"></script>
 {% else %}
 <script src="{{ " js/contact_me.js" }}"></script>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=_turnstileCb" defer></script>
+<script>
+function _turnstileCb() {
+    console.debug('_turnstileCb called');
+
+    turnstile.render('#cf-turnstile', {
+      sitekey: "0x4AAAAAAA4FOgcxm1tbO_Mt",
+      theme: 'light',
+      callback: function() {
+            var searchButton = document.getElementById('search-button');
+            if (searchButton) {
+                searchButton.removeAttribute('disabled');
+            }
+        },
+    });
+}
+</script>
 {% endif %}
 
 <!-- Custom Theme JavaScript -->
